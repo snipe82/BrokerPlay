@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broker Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo de Broker Play"> <!-- Cambia logo.png por la ruta de tu logo -->
+        <h1 class="header-title">Broker Play</h1>
+        <div class="points-account">
+            <strong>0</strong> Puntos
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="login-form">
+            <h2>Iniciar Sesión</h2>
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" placeholder="Ingrese su usuario">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" placeholder="Ingrese su contraseña">
+            <button onclick="login()">Entrar</button>
+            <div class="loading" id="loading" style="display: none;">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard" class="container" style="display: none;">
+        <h2>Panel de Control</h2>
+        
+        <!-- Bandeja de Avisos -->
+        <div class="notification-tray">
+            <h3>Avisos Importantes</h3>
+            <div class="notification">
+                <strong>Nuevo reclamo registrado:</strong> ID 003 - Cliente: Luis Fernández
+            </div>
+            <div class="notification alert">
+                <strong>Alerta:</strong> Consulta C002 tiene más de 48 horas sin respuesta.
+            </div>
+            <div class="notification">
+                <strong>Solicitud de póliza aprobada:</strong> ID 1003 - Cliente: Teresa Ruiz
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Reclamos</h3>
+            <div class="grid">
+                <div class="grid-item"><strong>ID Reclamo:</strong> 001</div>
+                <div class="grid-item"><strong>Cliente:</strong> Juan Pérez</div>
+                <div class="grid-item"><strong>Fecha:</strong> 01/10/2024</div>
+                <div class="grid-item"><strong>Estado:</strong> En Proceso</div>
+            </div>
+            <div class="grid">
+                <div class="grid-item"><strong>ID Reclamo:</strong> 002</div>
+                <div class="grid-item"><strong>Cliente:</strong> María López</div>
+                <div class="grid-item"><strong>Fecha:</strong> 28/09/2024</div>
+                <div class="grid-item"><strong>Estado:</strong> Resuelto</div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Solicitudes de Póliza</h3>
+            <div class="grid">
+                <div class="grid-item"><strong>ID Solicitud:</strong> 1001</div>
+                <div class="grid-item"><strong>Cliente:</strong> Carlos Gómez</div>
+                <div class="grid-item"><strong>Fecha:</strong> 29/09/2024</div>
+                <div class="grid-item"><strong>Estado:</strong> Pendiente</div>
+            </div>
+            <div class="grid">
+                <div class="grid-item"><strong>ID Solicitud:</strong> 1002</div>
+                <div class="grid-item"><strong>Cliente:</strong> Ana Torres</div>
+                <div class="grid-item"><strong>Fecha:</strong> 30/09/2024</div>
+                <div class="grid-item"><strong>Estado:</strong> Aprobada</div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Usuarios Conectados</h3>
+            <div class="grid">
+                <div class="grid-item"><strong>ID Usuario:</strong> U001</div>
+                <div class="grid-item"><strong>Nombre:</strong> Laura Martínez</div>
+                <div class="grid-item"><strong>Email:</strong> laura@example.com</div>
+                <div class="grid-item"><strong>Última Conexión:</strong> 01/10/2024 09:15</div>
+            </div>
+            <div class="grid">
+                <div class="grid-item"><strong>ID Usuario:</strong> U002</div>
+                <div class="grid-item"><strong>Nombre:</strong> Pedro Ríos</div>
+                <div class="grid-item"><strong>Email:</strong> pedro@example.com</div>
+                <div class="grid-item"><strong>Última Conexión:</strong> 30/09/2024 17:20</div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Consultas</h3>
+            <div class="grid">
+                <div class="grid-item alert"><strong>ID Consulta:</strong> C001</div>
+                <div class="grid-item alert"><strong>Cliente:</strong> Sofía Martínez</div>
+                <div class="grid-item alert"><strong>Consulta:</strong> Información sobre pólizas</div>
+                <div class="grid-item alert"><strong>Estado:</strong> Resuelto</div>
+            </div>
+            <div class="grid">
+                <div class="grid-item"><strong>ID Consulta:</strong> C002</div>
+                <div class="grid-item"><strong>Cliente:</strong> Andrés García</div>
+                <div class="grid-item"><strong>Consulta:</strong> Dudas sobre reclamos</div>
+                <div class="grid-item"><strong>Estado:</strong> En Proceso</div>
+            </div>
+        </div>
+        <button id="bussiness-intelligence" class="card">Abrir Panel de Business Inteligente</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Broker Play. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
