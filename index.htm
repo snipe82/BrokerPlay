@@ -11,12 +11,11 @@
         <img src="logo.png" alt="Logo de Broker Play"> <!-- Cambia logo.png por la ruta de tu logo -->
         <h1 class="header-title">Broker Play</h1>
         <div class="points-account">
-            <strong>0</strong> Puntos
+            <strong>10 Octubre 2024</strong> 
         </div>
     </header>
 
-    <div class="container">
-        <div class="login-form">
+         <div class="login-form">
             <h2>Iniciar Sesión</h2>
             <label for="username">Usuario:</label>
             <input type="text" id="username" placeholder="Ingrese su usuario">
@@ -28,8 +27,16 @@
             </div>
         </div>
     </div>
-
-    <div id="dashboard" class="container" style="display: none;">
+	<!-- Menú que se muestra después de iniciar sesión -->
+    <nav id="menu" style="display: none;">
+        <ul>
+            <li><a href="#" onclick="loadPage('dashboard')">Panel de Control</a></li>
+            <li><a href="#" onclick="loadPage('searchPanel')">Buscar</a></li>
+            <li><a href="#" onclick="loadPage('goalsPanel')">Mis metas</a></li>
+        </ul>
+    </nav>
+    <div id="content"class="container" >
+	<div id="dashboard" class="container" style="display: none;">
         <h2>Panel de Control</h2>
         
         <!-- Bandeja de Avisos -->
@@ -108,10 +115,47 @@
         </div>
         <button id="bussiness-intelligence" class="card">Abrir Panel de Business Inteligente</button>
     </div>
+	<div id="searchPanel" style="display: none;">
+    <div class="search-form">
+        <label for="searchInput">Buscar persona:</label>
+        <input type="text" id="searchInput" placeholder="Ingrese el nombre o ID">
+        <button onclick="searchPerson()">
+            <img src="lupa.png" alt="Buscar"> <!-- Cambia 'lupa.png' por la ruta de tu imagen de lupa -->
+        </button>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Broker Play. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Panel donde se mostrarán los resultados -->
+    <div id="resultsPanel" class="result-card" style="display: none;">
+        <h2>Información del Cliente</h2>
+        <p><strong>Nombre:</strong> <span id="clientName"></span></p>
+        <p><strong>Apellido:</strong> <span id="clientLastName"></span></p>
+        <p><strong>Edad:</strong> <span id="clientAge"></span></p>
+        <p><strong>Ocupación:</strong> <span id="clientOccupation"></span></p>
+        <p><strong>País:</strong> <span id="clientCountry"></span></p>
+
+        <h3>Pólizas Contratadas</h3>
+        <ul id="policiesList"></ul>
+
+        <h3>Estado de pago</h3>
+        <p id="paymentStatus"></p>
+    </div>
+	</div>
+	<!-- Panel donde se mostrarán las metas -->
+ <div id="goalsPanel" style="display: none;">
+    <h2>Mis Metas</h2>
+    <div class="goal" style="color: green;">
+        <h3>Meta Personal</h3>
+        <p>Has vendido: <strong>5 pólizas</strong></p>
+        <p>Meta del mes: <strong>10 pólizas</strong></p>
+        <p>Te faltan: <strong>5 pólizas</strong> para alcanzar tu meta.</p>
+    </div>
+    <div class="goal" style="color: orange;">
+        <h3>Meta del Equipo</h3>
+        <p>Meta del equipo: <strong>50 pólizas</strong></p>
+        <p>Pólizas vendidas hasta ahora: <strong>30 pólizas</strong></p>
+        <p>Estado: <strong>En curso</strong></p>
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
