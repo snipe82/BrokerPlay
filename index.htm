@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo de Broker Play"> <!-- Cambia logo.png por la ruta de tu logo -->
-        <h1 class="header-title">Broker Play</h1>
-        <div class="points-account">
-            <strong>10 Octubre 2024</strong> 
+<header>
+    <img src="logo.png" alt="Logo de Broker Play"> <!-- Cambia logo.png por la ruta de tu logo -->
+    <h1 class="header-title">Broker Play</h1>
+    <div class="points-account">
+        <strong id="current-date"></strong>  <!-- Aquí se mostrará la fecha actual -->
+        <div class="user-info">
+            <span id="logged-in-user"></span> <!-- Nombre de usuario -->
         </div>
-    </header>
-
+    </div>
+</header>
+<div id="content"class="container" >
+	
          <div class="login-form">
             <h2>Iniciar Sesión</h2>
             <label for="username">Usuario:</label>
@@ -33,10 +37,10 @@
             <li><a href="#" onclick="loadPage('dashboard')">Panel de Control</a></li>
             <li><a href="#" onclick="loadPage('searchPanel')">Buscar</a></li>
             <li><a href="#" onclick="loadPage('goalsPanel')">Mis metas</a></li>
+            <li><a href="#" onclick="loadPage('bigData')">Big Data</a></li>
         </ul>
     </nav>
-    <div id="content"class="container" >
-	<div id="dashboard" class="container" style="display: none;">
+    <div id="dashboard" class="container" style="display: none;">
         <h2>Panel de Control</h2>
         
         <!-- Bandeja de Avisos -->
@@ -123,7 +127,6 @@
             <img src="lupa.png" alt="Buscar"> <!-- Cambia 'lupa.png' por la ruta de tu imagen de lupa -->
         </button>
     </div>
-
     <!-- Panel donde se mostrarán los resultados -->
     <div id="resultsPanel" class="result-card" style="display: none;">
         <h2>Información del Cliente</h2>
@@ -141,7 +144,7 @@
     </div>
 	</div>
 	<!-- Panel donde se mostrarán las metas -->
- <div id="goalsPanel" style="display: none;">
+	<div id="goalsPanel" style="display: none;">
     <h2>Mis Metas</h2>
     <div class="goal" style="color: green;">
         <h3>Meta Personal</h3>
@@ -155,8 +158,17 @@
         <p>Pólizas vendidas hasta ahora: <strong>30 pólizas</strong></p>
         <p>Estado: <strong>En curso</strong></p>
     </div>
-</div>
-
+	</div>
+    <div id="bigData" style="display: none;">
+    <div class="search-form">
+        <label for="searchInput">Accede desde tu excel a nuestro Data Lake</label>
+        <button onclick="generateExcel()">
+            <img src="excel.png" alt="Acceder"> <!-- Cambia 'lupa.png' por la ruta de tu imagen de lupa -->
+        </button>
+    </div>
+	</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
